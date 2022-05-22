@@ -6,6 +6,8 @@ import 'package:project_cs310/widgets/progress.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../models/user.dart';
+
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
@@ -18,9 +20,7 @@ class Timeline extends StatefulWidget {
 
 class _TimelineState extends State<Timeline> {
 
-  logout() {
-    googleSignIn.signOut();
-  }
+
 
   @override
   void initState() {
@@ -42,7 +42,9 @@ class _TimelineState extends State<Timeline> {
     await Firebase.initializeApp();
     final String id = "89HwzD3YvdHAgnBT9bEZ";
     final DocumentSnapshot doc = await usersRef.doc(id).get();
-    print(doc.data);
+    final data = doc.data as Map<String, dynamic>;
+    final user = User.fromJson(data);
+    print(user.fullName());
     print(doc.exists);
   }
 
@@ -50,9 +52,7 @@ class _TimelineState extends State<Timeline> {
   Widget build(context) {
     return Scaffold(
       appBar: header(context, isAppTitle: true),
-      body: RaisedButton(
-        child: Text('Logout'),
-        onPressed: logout,
-    ));
+      body: const Text("timeline"),
+    );
   }
 }
