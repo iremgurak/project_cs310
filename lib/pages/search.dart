@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/header.dart';
+
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
 
@@ -10,7 +12,10 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
-    return const Text('Search');
+    return Scaffold(
+      appBar: header(context, titleText: "Search"),
+      body: const Text("results"),
+    );
   }
 }
 

@@ -7,6 +7,8 @@ import 'package:project_cs310/pages/timeline.dart';
 import 'package:project_cs310/pages/upload.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import 'direct_message.dart';
+
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
 class Home extends StatefulWidget {
@@ -84,8 +86,9 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: PageView(
         children: <Widget>[
-          const Timeline(),
+          Timeline(),
           ActivityFeed(),
+          DirectMessages(),
           Upload(),
           Search(),
           Profile(),
@@ -101,6 +104,7 @@ class _HomeState extends State<Home> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.whatshot)),
             BottomNavigationBarItem(icon: Icon(Icons.notifications_active)),
+            BottomNavigationBarItem(icon: Icon(Icons.mail)),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.photo_camera,
@@ -125,8 +129,8 @@ class _HomeState extends State<Home> {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Theme.of(context).colorScheme.secondary,
-              Theme.of(context).primaryColor,
+              Theme.of(context).colorScheme.primary,
+              Theme.of(context).colorScheme.onPrimary,
             ],
           ),
         ),
@@ -136,7 +140,7 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'FlutterShare',
+              'WasHere',
               style: TextStyle(
                 fontFamily: "Signatra",
                 fontSize: 90.0,

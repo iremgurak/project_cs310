@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_cs310/widgets/header.dart';
 
 class ActivityFeed extends StatefulWidget {
   const ActivityFeed({Key? key}) : super(key: key);
@@ -10,7 +11,10 @@ class ActivityFeed extends StatefulWidget {
 class _ActivityFeedState extends State<ActivityFeed> {
   @override
   Widget build(BuildContext context) {
-    return const Text('Activity Feed');
+    return Scaffold(
+      appBar: header(context, titleText: "Notifications"),
+      body: const Text("activity feed"),
+    );
   }
 }
 
