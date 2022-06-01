@@ -38,9 +38,9 @@ class _DetailViewState extends State<DetailView> with TickerProviderStateMixin {
 
     animation = tween
         .animate(CurvedAnimation(parent: controller!, curve: Curves.easeInExpo))
-          ..addListener(() {
-            setState(() {});
-          });
+      ..addListener(() {
+        setState(() {});
+      });
 
     controller!.forward();
 
@@ -73,7 +73,7 @@ class _DetailViewState extends State<DetailView> with TickerProviderStateMixin {
             },
             blendMode: BlendMode.dstIn,
             child: Image.asset(
-              "images/${champion!.name.toLowerCase()}_lol.gif",
+              "assets/images/${champion!.name.toLowerCase()}_lol.gif",
               fit: BoxFit.fitWidth,
               width: double.infinity,
             ),
@@ -102,18 +102,18 @@ class _DetailViewState extends State<DetailView> with TickerProviderStateMixin {
                             padding: const EdgeInsets.only(top: 50.0),
                             child: Column(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                           children: [
                                             Image.asset(
-                                                "images/role/${champion!.role.toString().split(".")[1].toLowerCase()}.png",
+                                                "assets/images/role/${champion!.role.toString().split(".")[1].toLowerCase()}.png",
                                                 width: 40,
                                                 height: 40),
                                             SizedBox(
@@ -127,12 +127,12 @@ class _DetailViewState extends State<DetailView> with TickerProviderStateMixin {
                                                     .split(".")[1],
                                                 style: textTheme.headline3
                                                     ?.copyWith(
-                                                        color:
-                                                            Color(0xffAE914B)))
+                                                    color:
+                                                    Color(0xffAE914B)))
                                           ]),
                                       Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                        MainAxisAlignment.center,
                                         children: <Widget>[
                                           Container(
                                             height: 40,
@@ -156,7 +156,7 @@ class _DetailViewState extends State<DetailView> with TickerProviderStateMixin {
                                                   .toUpperCase(),
                                               style: textTheme.headline3
                                                   ?.copyWith(
-                                                      color: Color(0xffAE914B)))
+                                                  color: Color(0xffAE914B)))
                                         ],
                                       )
                                     ],
@@ -210,7 +210,7 @@ class _DetailViewState extends State<DetailView> with TickerProviderStateMixin {
                       champion!.name.toUpperCase(),
                       style: Theme.of(context).textTheme.headline1?.copyWith(
                           letterSpacing:
-                              4 + 25 * ((400 - animation!.value) / 400.0)),
+                          4 + 25 * ((400 - animation!.value) / 400.0)),
                     ),
                   ]),
             ),

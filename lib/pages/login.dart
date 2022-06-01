@@ -7,13 +7,13 @@ class Login extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: const Text('WasHere!',
-            style: TextStyle(
-              fontSize: 32.0,
-              fontWeight: FontWeight.bold,
-            )
+        title: Text(
+          'WasHere!',
         ),
-        backgroundColor: Colors.blue,
+        leading: BackButton(
+          color: Colors.white,
+        ),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +25,7 @@ class Login extends StatelessWidget{
               backgroundColor: Colors.white,
               child: ClipOval(
                   child : Image.network(
-                    'assets/icon.png',
+                    'https://static.vecteezy.com/system/resources/previews/000/413/443/non_2x/vector-location-icon.jpg',
 
 
                   )
@@ -81,22 +81,6 @@ class Login extends StatelessWidget{
             onPressed: () {},
           ),
           SizedBox(height: 100,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: OutlinedButton(
-                  child: Text("Register", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),),
-
-                  onPressed: () {},
-                ),
-              ),
-            ],
-          )
-
-
 
         ],
       ),

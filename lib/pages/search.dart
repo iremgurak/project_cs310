@@ -13,15 +13,28 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0XFF7CC0FF),
       appBar: AppBar(
-        title: Text('Search for People'),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        title:
+        Align(
+          alignment: Alignment.center,
+
+          child: Text(
+            "Search",
+            style: TextStyle(
+              fontFamily: "Signatra",
+              fontSize: 50.0,
+              color: Colors.white,
+            ),
+          ),
+        ),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search), onPressed:() {
             showSearch(context: context, delegate: DataSearch());
           })
         ],
       ),
-      drawer: Drawer(),
     );
   }
 }

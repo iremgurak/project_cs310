@@ -124,6 +124,7 @@ class _TimelineState extends State<Timeline> {
       ),
     ];
     return Scaffold(
+      backgroundColor: Color(0XFF7CC0FF),
       appBar: header(context, titleText: "WasHere", isAppTitle: true),
       body: SafeArea(
         child: Column(

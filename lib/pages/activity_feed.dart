@@ -16,7 +16,7 @@ class _ActivityFeedState extends State<ActivityFeed> {
     return Scaffold(
       backgroundColor: Color(0XFF7CC0FF),
       appBar: AppBar(
-        backgroundColor: Color(0xFF2D842D),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         title:
         Align(
           alignment: Alignment.center,

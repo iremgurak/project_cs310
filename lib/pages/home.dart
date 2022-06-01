@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_cs310/pages/activity_feed.dart';
+import 'package:project_cs310/pages/login.dart';
 import 'package:project_cs310/pages/profile.dart';
 import 'package:project_cs310/pages/search.dart';
+import 'package:project_cs310/pages/sign_up.dart';
 import 'package:project_cs310/pages/timeline.dart';
 import 'package:project_cs310/pages/upload.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -62,6 +64,20 @@ class _HomeState extends State<Home> {
 
   login() {
     googleSignIn.signIn();
+  }
+
+  login2() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Login()),
+    );
+  }
+
+  signup() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Register()),
+    );
   }
 
   logout() {
@@ -161,7 +177,26 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-            )
+            ),
+            SizedBox(height: 10,),
+            OutlinedButton(
+
+              child: Text("Login", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold
+              ),
+              ),
+
+              onPressed: login2,
+            ),
+            SizedBox(height: 10,),
+            OutlinedButton(
+
+              child: Text("Sign Up", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold
+              ),
+              ),
+
+              onPressed: signup,
+            ),
+
           ],
         ),
       ),
