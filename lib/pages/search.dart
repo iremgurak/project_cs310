@@ -13,11 +13,85 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header(context, titleText: "Search"),
-      body: const Text("results"),
+      appBar: AppBar(
+        title: Text('Search for People'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.search), onPressed:() {
+            showSearch(context: context, delegate: DataSearch());
+          })
+        ],
+      ),
+      drawer: Drawer(),
     );
   }
 }
+class DataSearch extends SearchDelegate<String>{
+
+  final people = [
+    "ahmet",
+    "mehmet",
+    "irem",
+    "ezgi",
+    "murat",
+    "ayşe",
+    "kemal",
+    "ozan",
+    "kamil",
+  ];
+
+  final recentPeople = [
+    "murat",
+    "ozan",
+    "ezgi",
+  ];
+
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    // TODO: implement buildActions actions for app bar
+    return [
+      IconButton( icon:Icon(Icons.search),
+          onPressed: (){
+            query = "";
+          })
+    ];
+
+  }
+
+  @override
+  Widget? buildLeading(BuildContext context) {
+    // TODO: implement buildLeading leading icon on the left of app bar
+    return CloseButton();
+  }
+
+
+  @override
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    //burda tıkladıgımızda o sayfaya yönlendirme koyucam.
+    throw UnimplementedError();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final suggestionList = query.isEmpty?recentPeople:people.where((p)=>p.startsWith(query)).toList();
+    return (
+        ListView.builder(itemBuilder: (context,index)=>ListTile(
+          onTap: (){
+            showResults(context);
+          },
+          leading: Icon(Icons.add_chart_outlined),
+          title: Text(suggestionList[index]),
+        ),
+          itemCount: suggestionList.length,
+        )
+    );
+    // TODO: implement buildSuggestions
+
+  }
+
+}
+
+
 
 class UserResult extends StatelessWidget {
   const UserResult({Key? key}) : super(key: key);

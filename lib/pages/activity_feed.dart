@@ -7,13 +7,135 @@ class ActivityFeed extends StatefulWidget {
   @override
   _ActivityFeedState createState() => _ActivityFeedState();
 }
-
+String messageTitle = "Empty";
+String notificationAlert = "alert";
+String title = "title";
 class _ActivityFeedState extends State<ActivityFeed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header(context, titleText: "Notifications"),
-      body: const Text("activity feed"),
+      backgroundColor: Color(0XFF7CC0FF),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF2D842D),
+        title:
+        Align(
+          alignment: Alignment.center,
+
+          child: Text(
+            "Notifications",
+            style: TextStyle(
+              fontFamily: "Signatra",
+              fontSize: 50.0,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+
+      body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(height: 30),
+              Container(
+                alignment: FractionalOffset.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blueGrey,
+                ),
+                width: 900,
+                height: 40,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+
+                  child: Text(
+                    "  Murat Can shared a new post!",
+                    style: TextStyle(
+                      color:Colors.black,
+                      fontSize:20,
+                      leadingDistribution: TextLeadingDistribution.even,
+                    ),),
+                ),
+              ),
+              Container(height: 30),
+              Container(
+                decoration:BoxDecoration(
+                    borderRadius:BorderRadius.circular(10),
+                    color:Colors.blueGrey
+                ),
+                width: 900,
+                height: 40,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "  Mary liked your post!",
+                    style: TextStyle(
+                      color:Colors.black,
+                      fontSize:20,
+                      leadingDistribution: TextLeadingDistribution.even,
+                    ),),
+                ),
+              ),
+              Container(height: 30),
+              Container(
+                decoration:BoxDecoration(
+                    borderRadius:BorderRadius.circular(10),
+                    color:Colors.blueGrey
+                ),
+                width: 900,
+                height: 40,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "  İrem shared a new post!",
+                    style: TextStyle(
+                      color:Colors.black,
+                      fontSize:20,
+                      leadingDistribution: TextLeadingDistribution.even,
+                    ),),
+                ),
+              ),
+              Container(height: 30),
+              Container(
+                decoration:BoxDecoration(
+                    borderRadius:BorderRadius.circular(10),
+                    color:Colors.blueGrey
+                ),
+                width: 900,
+                height: 40,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    " Oğuzhan liked your post!",
+                    style: TextStyle(
+                      color:Colors.black,
+                      fontSize:20,
+                      leadingDistribution: TextLeadingDistribution.even,
+                    ),),
+                ),
+              ),
+              Container(height: 30),
+              Container(
+                decoration:BoxDecoration(
+                    borderRadius:BorderRadius.circular(10),
+                    color:Colors.blueGrey
+                ),
+                width: 900,
+                height: 40,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    " Serdar shared a new post!",
+                    style: TextStyle(
+                      color:Colors.black,
+                      fontSize:20,
+                      leadingDistribution: TextLeadingDistribution.even,
+                    ),),
+                ),
+              )
+            ],
+          )
+      ),
     );
   }
 }
