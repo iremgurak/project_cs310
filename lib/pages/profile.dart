@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:project_cs310/widgets/header.dart';
 import 'package:project_cs310/utils/user_preferences.dart';
+import 'package:project_cs310/widget/appbar_widget.dart';
+import 'package:project_cs310/widget/button_widget.dart';
+import 'package:project_cs310/widget/numbers_widget.dart';
+import 'package:project_cs310/widget/profile_widget.dart';
 
 import 'home.dart';
 
