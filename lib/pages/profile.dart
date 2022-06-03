@@ -43,6 +43,16 @@ class _ProfileState extends State<Profile> {
     );
   }
 
+    @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: header(context, titleText: "Profile"),
+      body: RaisedButton(
+      child: Text('Logout'),
+      onPressed: logout,
+    ));
+  }
+  
     Widget buildName(User user) => Column(
         children: [
           Text(
@@ -62,7 +72,7 @@ class _ProfileState extends State<Profile> {
         onClicked: () {},
       );
   
-  Widget buildAbout(User user) => Container(
+  Widget buildLocation(User user) => Container(
         padding: EdgeInsets.symmetric(horizontal: 48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,13 +90,5 @@ class _ProfileState extends State<Profile> {
         ),
       );
   
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: header(context, titleText: "Profile"),
-      body: RaisedButton(
-      child: Text('Logout'),
-      onPressed: logout,
-    ));
-  }
+
 }
