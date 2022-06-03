@@ -12,6 +12,31 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
 
+  @override
+  Widget build(BuildContext context) {
+    final user = UserPreferences.myUser;
+
+    return Scaffold(
+      appBar: buildAppBar(context),
+      body: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          ProfileWidget(
+            imagePath: user.imagePath,
+            onClicked: () async {},
+          ),
+          const SizedBox(height: 24),
+          buildName(user),
+          const SizedBox(height: 24),
+          Center(child: buildUpgradeButton()),
+          const SizedBox(height: 24),
+          NumbersWidget(),
+          const SizedBox(height: 48),
+          buildAbout(user),
+        ],
+      ),
+    );
+  }
   logout() {
     googleSignIn.signOut();
   }
